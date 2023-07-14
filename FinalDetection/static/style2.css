@@ -1,0 +1,101 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 689px;
+}
+.container{
+    height:100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.btn {
+    cursor: pointer;
+    padding: 9px 21px;
+    margin: 40px;
+    border-radius: 18px;
+    font-weight: bold;
+    color: white;
+    padding-top: 8px;
+    font-size: 20px;
+    border: none;
+    position: relative;
+    top: 1px;
+    background-color: rgb(181 52 52);
+}
+.box p{
+    margin: 9px;
+    color: white;
+    font-weight: 1000px;
+    
+}
+.box h1{
+    color: white;
+    font-weight: 100px;
+}
+.box strong{
+    text-decoration: underline;
+}
+.container::before{
+    content: "";
+            position: absolute;
+            background: url(/static/fanime.gif) no-repeat center center/cover;
+            opacity: 1;
+            z-index: -1;
+            width: 100%;
+            height:100% ;
+            top: 0px;
+            left: 0px;
+}
+
+.popup{
+    width: 75%;
+    height: 75vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-radius: 15px;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 26px 6px;
+    visibility: hidden;
+    transition: transform 0.2s,top 0.2s;
+}
+.open-popup
+{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+
+}
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+}
+.popup button{
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(138, 55, 55);
+    position: relative;
+    top: 301px;
+    width: 80%;
+}
+.popup button:hover{
+    background-color: green;
+}
+.popup p{
+    font-size: 27px;
+    margin-top: 21px;
+}

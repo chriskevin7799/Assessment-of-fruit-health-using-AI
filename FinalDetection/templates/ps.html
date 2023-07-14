@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <header class="main">
+            <span> <img src="" alt=""> <span id="logo">Mr.PHALA</span> </span>
+            <div class= "h-primary">
+                <div  id="h-primary1">
+                    Welcome to Quality analysis
+                </div>
+            </div>
+        </header>
+        <section class="middle">
+             <div class="middle1" id="middleflex">
+                <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd"></label>
+                        <div class="col-sm-10">   
+                            <img src="/static/back.png" alt=""
+                             id="preview-image"> 
+                             <div class="innertext"  id="middlebox">
+                                <h2> 
+                                   <h2>Dectected fruit is   :<i><strong  style="color: black;">{{fruit}}</strong></i></h2>  <input type="text" id="sravan" value={{prediction}}></input>
+                                </h2>
+                                <h2>
+                                    percentage of {{ness}}ness
+                                </h2>
+                                <input type="text" id="res" value={{result}}></input>
+                                <div class="piechart">
+                                    <div class="circularprogress">
+                                        <span class="progressvalue" id="provalue">0%</span>
+                                    </div>
+                                </div>
+                               
+                             </div>
+                            
+      
+                            <input type="file" class="form-control"  name="my_image" id="pwd">
+                          </div>
+                    </div>
+                </div>
+                </section>
+                <div class="form-group">        
+                    <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success"  id="but"   onclick=bordercol()>Submit</button>
+                    </div>
+                </div>
+            </form>
+        <footer class="last" id="gal">
+            <label for="pwd" onclick=image() ><span>Gallery</span> <img src="/static/icons8-gallery-64.png" alt="">
+            </label>
+        </footer>
+        <div class="innerimage" id="givenimage" >
+	{% if prediction %}
+    <img src="{{img_path}}" height="400px" width="400px"   id="inner">
+    <!-- <h2>
+        prediction is:  {{prediction}}
+        percentage: {{result}}
+    </h2> -->
+      {% endif %}
+    </div>
+    </div>
+    <script>
+       let fruit= document.getElementById("sravan").value;
+       let van=document.getElementById("sravan");
+let middleflex=document.getElementById('middleflex');
+let logo=document.getElementById('logo');
+let inner=document.getElementById("inner");
+const imageInput = document.getElementById('pwd');
+const previewImage = document.getElementById('preview-image');
+let provalue=document.getElementById("provalue");
+imageInput.addEventListener('change', function() {
+  const file = imageInput.files[0];
+  const reader = new FileReader();
+ 
+  reader.onload = function(e) {
+  
+    previewImage.src = e.target.result;
+  }
+ 
+  reader.readAsDataURL(file);
+});
+
+if(fruit==="rotten")
+  {
+        inner.style.border="8px solid red" ;
+        van.style.backgroundColor="red";
+  }
+  else if(fruit==="fresh"){
+    inner.style.border="8px solid green";
+    van.style.backgroundColor="green"; 
+  }
+  else{
+    inner.style.border="none";
+   
+  }
+
+let res=document.getElementById("res").value;
+let res1=Math.ceil(res);
+  let circularprogress=document.querySelector(".circularprogress");
+  let progressvalue=document.querySelector(".progressvalue");
+  let progressstartvalue=0,
+      progressendvalue=res1,
+      speed=15;
+
+let progress=setInterval(() => {
+    progressstartvalue++;
+    progressvalue.textContent=`${progressstartvalue}%`
+    if(fruit==="fresh")
+    {
+        circularprogress.style.background=`conic-gradient(rgb(13 224 38) ${progressstartvalue*3.6}deg,#ededed 0deg)`;
+        provalue.style.color="#0de026";
+
+    }
+    else
+    {
+        circularprogress.style.background=`conic-gradient(rgb(255 0 0) ${progressstartvalue*3.6}deg,#ededed 0deg)`;
+        provalue.style.color="#ff0000";
+    }
+    if(progressstartvalue==progressendvalue)
+    {
+        clearInterval(progress);
+    }
+    console.log(progressstartvalue);
+}, speed);
+
+function image()
+{
+let givenimage=document.getElementById("givenimage");
+let middlebox=document.getElementById("middlebox");
+{
+    if(givenimage.style.display!="none"  && middlebox.style.display!="none")
+    {
+        givenimage.style.display="none";
+    }
+    else
+    {
+        givenimage.style.display="block";
+        middlebox.style.display="block";                                                                                                                                                                                                                                                                                                 c
+    }
+}
+}
+
+    </script>
+</body>
+</html>

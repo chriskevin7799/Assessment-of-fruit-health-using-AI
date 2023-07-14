@@ -1,0 +1,274 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.main{
+    color: white;
+    margin-left: -120px;
+}
+.main span{
+    position: relative;
+    top: 33px;
+}
+.h-primary img{
+    width: 60px;
+}
+.middle{
+    height:484px;
+    width: 100%;
+    display: flex;
+    color: white;
+    justify-content:flex-start;
+    align-items: center;
+    position: relative;
+}
+#but
+{
+    border: none;
+    margin-left: -191px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 28px;
+    margin-top: -15px;
+    font-weight: bold;
+    
+}
+.but:hover{
+    transform: scale(1.1);
+}
+.middle1{
+     /* text-align: center; */
+     height: 319px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 389px;
+     border-radius: 78px;
+     color: black;
+     margin-left: -148px;
+     margin-top: -10px;
+     background-color: white;
+}
+.last{
+    text-align: center;
+    color: black;
+    background-color: rgb(237 224 224);
+    padding: 29px;
+    border: 1px solid rgb(0, 0, 0);
+    position: relative;
+    font-weight: bolder;
+    font-size: 17px;
+    border-radius: 43px;
+    width: 149px;
+    display: block;
+    margin: auto;
+    border: none;
+    height: 25px;
+    cursor: pointer;
+}
+#gal span{
+    position: relative;
+    top: -11px;
+    left: -18px;
+    cursor: pointer;
+}
+#cam span{
+    position: relative;
+    top: -33px;
+}
+#cam
+{
+    position: relative;
+    top: 10px;
+    text-align: center;
+}
+
+
+#pwd{
+    display: none;
+}
+/* #gal label{
+    display: block;
+    cursor: pointer;
+} */
+#gal img{
+    position: relative;
+    top: -55px;
+    left: 33px;
+    cursor: pointer;
+}
+#cam img{
+    position: relative;
+    top: -13px;
+}
+#logo 
+{
+    margin:20px;
+    position: relative;
+    top: 12px;
+    font-weight: bold;
+    font-size: 28px;
+}
+.last:hover{
+    cursor: pointer;
+    font-size: 20px;
+}
+.container::before{
+    content: "";
+    position: absolute;
+    opacity: 0.7;
+    z-index: -1;
+    width: 100%;
+    height: 748px;
+    top: 0px;
+    left: 0px;
+    animation: animate 30s linear infinite;
+}
+@keyframes animate
+{
+    0%,100%
+    {
+        background: url(/static/fruit-1202313.jpg) no-repeat  center/cover;
+    }
+    25%
+    {
+        background: url(/static/fruit-market-590320.jpg) no-repeat  center/cover;
+    }
+    50%
+    {
+        background: url(/static/fruits-82524.jpg) no-repeat  center/cover;
+    }
+    75%
+    {
+        background: url(/static/fresh-fruits-2305192_1280.jpg) no-repeat center center/cover;
+    }
+}
+.middle1 .form-group img{
+    border-radius: 21%;
+    height: 320px;
+    width: 401px;
+    margin-left: 7px;
+    margin-top: 313px;
+}
+ #h-primary1{
+    font-size: 33px;
+    padding-left: 444px;
+    color: rgb(112, 51, 51);
+    width: 52ch;
+    font-weight: bold;
+    animation: typing 5.5s steps(28), blink 1.5s step-end infinite alternate;
+    white-space: nowrap;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    position: relative;
+    top: 29px;
+    border-right: 3px solid;;
+}
+@keyframes typing {
+from {
+width: 0
+}
+}
+
+@keyframes blink {
+50% {
+border-color: transparent
+}
+}
+
+.innerimage img
+{
+    border-radius: 21%;
+     top: -482px; 
+    position: relative;
+    left: -163px;
+    /* top: -662px;  */
+    height: 324px;
+    width: 404px;
+}
+.innertext i
+{
+    color: green;
+}
+.innertext
+{
+    position: relative;
+    top: -303px;
+    left: 416px;
+    border: 1px solid black;
+    height: 299px;
+    width: 626px;
+    background-color: white;
+    /* text-align: center; */
+    padding-left: 35px;
+    margin-left: 34px;
+}
+
+#sravan
+{
+    font-style: italic;
+    border: none;
+    margin-top: 0px;
+    margin-left: 11px;
+    width: 160px;
+    padding: 6px 30px;
+    color: white;
+    font-size: 37px;
+    border: 1px solid black;
+    background-color: #ece1e1;
+    border-radius: 27px;
+
+}
+.circularprogress
+{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    border-radius: 50%;
+    background: conic-gradient(rgb(13 224 38) 3.6deg, rgb(237, 237, 237) 0deg);
+    align-items: center;
+    justify-content: center;
+}
+.circularprogress::before
+{
+    content: "";
+    position: absolute;
+    height: 184px;
+    width: 184px;
+    border-radius: 50%;
+    background-color:white;
+}
+.progressvalue
+{
+    position: relative;
+    font-size: 37px;
+    font-weight: bold;
+    color: #0de026;
+}
+.piechart
+{
+    position: relative;
+    left: 362px;
+    top: -205px;
+}
+#res
+{
+    text-align: center;
+    color: black;
+    background-color: rgb(237 224 224);
+    padding: 29px;
+    border: 1px solid rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 24px;
+    border-radius: 43px;
+    width: 135px;
+   
+    height: 25px;
+    margin-left: 23px;
+}
